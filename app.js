@@ -1,4 +1,15 @@
-const container = document.querySelector(".container");
+// Load header
+fetch("/components/header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+// Load footer
+fetch("/components/footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+
+  const container = document.querySelector(".container");
 const dots = document.querySelectorAll(".dot");
 const prevBtn = document.querySelector(".prev")
 const nextBtn = document.querySelector(".next")
