@@ -9,9 +9,7 @@ fetch("/components/footer.html")
     .then(data => document.getElementById("footer").innerHTML = data);
 
 
-<<<<<<< HEAD
 const container = document.querySelector(".container");
-=======
   // Load showroom menu
 document.addEventListener("DOMContentLoaded", () => {
   fetch("/page/components/menu-list-showroom.html")
@@ -51,11 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-
-  const container = document.querySelector(".container");
->>>>>>> 993a82f2fecd83ee33ce284c2079ef655e8645f9
 const dots = document.querySelectorAll(".dot");
 const prevBtn = document.querySelector(".prev")
 const nextBtn = document.querySelector(".next")
@@ -99,7 +92,6 @@ setInterval(() => {
     changeSlide(index);
 }, 3000);
 
-<<<<<<< HEAD
 const productList = document.querySelector(".product-list");
 const productPrev = document.querySelector(".product-slider-prev");
 const productNext = document.querySelector(".product-slider-next");
@@ -133,6 +125,3 @@ function updateProductSlide() {
     productList.style.transition = "transform 0.5s ease"; // hiệu ứng mượt
     productList.style.transform = `translateX(-${productIndex * cardWidth}px)`;
 }
-=======
-
->>>>>>> 993a82f2fecd83ee33ce284c2079ef655e8645f9
