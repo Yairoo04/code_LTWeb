@@ -9,7 +9,53 @@ fetch("/components/footer.html")
     .then(data => document.getElementById("footer").innerHTML = data);
 
 
+<<<<<<< HEAD
 const container = document.querySelector(".container");
+=======
+  // Load showroom menu
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/page/components/menu-list-showroom.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("menu-list-showroom").innerHTML = data;
+
+      // Auto active menu
+      const currentPath = window.location.pathname;
+      document.querySelectorAll("#menu-list-showroom li a").forEach(link => {
+        const linkPath = new URL(link.href, window.location.origin).pathname;
+        if (currentPath === linkPath) {
+          link.parentElement.classList.add("active");
+        }
+      });
+    })
+    .catch(err => console.error("Lỗi load menu:", err));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".choice-box-bao-hanh .choice-box");
+  const contents = document.querySelectorAll(".choice-content .content-box");
+
+  boxes.forEach(box => {
+    box.addEventListener("click", () => {
+      // reset active cho các box
+      boxes.forEach(b => b.classList.remove("active"));
+      // bật active cho box click
+      box.classList.add("active");
+
+      // reset nội dung
+      contents.forEach(c => c.classList.remove("active"));
+      // hiện đúng nội dung
+      const targetId = box.dataset.target;
+      document.getElementById(targetId).classList.add("active");
+    });
+  });
+});
+
+
+
+
+  const container = document.querySelector(".container");
+>>>>>>> 993a82f2fecd83ee33ce284c2079ef655e8645f9
 const dots = document.querySelectorAll(".dot");
 const prevBtn = document.querySelector(".prev")
 const nextBtn = document.querySelector(".next")
@@ -53,6 +99,7 @@ setInterval(() => {
     changeSlide(index);
 }, 3000);
 
+<<<<<<< HEAD
 const productList = document.querySelector(".product-list");
 const productPrev = document.querySelector(".product-slider-prev");
 const productNext = document.querySelector(".product-slider-next");
@@ -86,3 +133,6 @@ function updateProductSlide() {
     productList.style.transition = "transform 0.5s ease"; // hiệu ứng mượt
     productList.style.transform = `translateX(-${productIndex * cardWidth}px)`;
 }
+=======
+
+>>>>>>> 993a82f2fecd83ee33ce284c2079ef655e8645f9
