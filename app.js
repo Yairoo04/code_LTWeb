@@ -1,15 +1,15 @@
 // Load header
 fetch("/components/header.html")
-  .then(res => res.text())
-  .then(data => document.getElementById("header").innerHTML = data);
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
 
 // Load footer
 fetch("/components/footer.html")
-  .then(res => res.text())
-  .then(data => document.getElementById("footer").innerHTML = data);
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
 
 
-  const container = document.querySelector(".container");
+const container = document.querySelector(".container");
 const dots = document.querySelectorAll(".dot");
 const prevBtn = document.querySelector(".prev")
 const nextBtn = document.querySelector(".next")
@@ -52,3 +52,37 @@ setInterval(() => {
     index = (index + 1) % images.length;
     changeSlide(index);
 }, 3000);
+
+const productList = document.querySelector(".product-list");
+const productPrev = document.querySelector(".product-slider-prev");
+const productNext = document.querySelector(".product-slider-next");
+
+let productIndex = 0;
+const visibleProducts = 6; // Số sản phẩm hiển thị cùng lúc
+const totalItems = document.querySelectorAll(".product-card").length;
+
+productNext.addEventListener('click', () => {
+    if (productIndex < totalItems - visibleProducts) {
+        productIndex += visibleProducts;
+    } else {
+        // Nếu đang ở cuối thì quay lại đầu
+        productIndex = 0;
+    }
+    updateProductSlide();
+});
+
+productPrev.addEventListener('click', () => {
+    if (productIndex > 0) {
+        productIndex -= visibleProducts;
+    } else {
+        // Nếu đang ở đầu thì quay về cuối
+        productIndex = totalItems - visibleProducts;
+    }
+    updateProductSlide();
+});
+
+function updateProductSlide() {
+    const cardWidth = document.querySelector(".product-card").offsetWidth;
+    productList.style.transition = "transform 0.5s ease"; // hiệu ứng mượt
+    productList.style.transform = `translateX(-${productIndex * cardWidth}px)`;
+}
