@@ -76,7 +76,7 @@
 
 .store-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
   gap: 15px;
 }
 
@@ -91,7 +91,6 @@
   margin-bottom: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
 }
 
 .store-card h4 {
@@ -108,7 +107,7 @@
   color: #333;
 }
 
-.btn-direction .st-direction-text{
+.btn-direction .st-direction-text {
   color: #fff;
 }
 
@@ -117,7 +116,7 @@
   text-decoration: none;
 }
 
-.lienHe{
+.lienHe {
   background: #e0e2e0;
   padding: 10px 20px;
   display: flex;
@@ -128,19 +127,17 @@
   gap: 10px;
 }
 
-.lienHe a{
-    text-decoration: none;
-
+.lienHe a {
+  text-decoration: none;
 }
 
-.showroom-hotline-text-footer{
+.showroom-hotline-text-footer {
   color: #28a745;
-
 }
-.email-website a{
+.email-website a {
   color: #068ded;
 }
 
-.email-website a:hover{
+.email-website a:hover {
   color: #28a745;
 }

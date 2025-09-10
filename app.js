@@ -9,6 +9,48 @@ fetch("/components/footer.html")
   .then(data => document.getElementById("footer").innerHTML = data);
 
 
+  // Load showroom menu
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/page/components/menu-list-showroom.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("menu-list-showroom").innerHTML = data;
+
+      // Auto active menu
+      const currentPath = window.location.pathname;
+      document.querySelectorAll("#menu-list-showroom li a").forEach(link => {
+        const linkPath = new URL(link.href, window.location.origin).pathname;
+        if (currentPath === linkPath) {
+          link.parentElement.classList.add("active");
+        }
+      });
+    })
+    .catch(err => console.error("Lỗi load menu:", err));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".choice-box-bao-hanh .choice-box");
+  const contents = document.querySelectorAll(".choice-content .content-box");
+
+  boxes.forEach(box => {
+    box.addEventListener("click", () => {
+      // reset active cho các box
+      boxes.forEach(b => b.classList.remove("active"));
+      // bật active cho box click
+      box.classList.add("active");
+
+      // reset nội dung
+      contents.forEach(c => c.classList.remove("active"));
+      // hiện đúng nội dung
+      const targetId = box.dataset.target;
+      document.getElementById(targetId).classList.add("active");
+    });
+  });
+});
+
+
+
+
   const container = document.querySelector(".container");
 const dots = document.querySelectorAll(".dot");
 const prevBtn = document.querySelector(".prev")
@@ -52,3 +94,5 @@ setInterval(() => {
     index = (index + 1) % images.length;
     changeSlide(index);
 }, 3000);
+
+

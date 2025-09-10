@@ -1,0 +1,96 @@
+.showroom-system-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.menu-list {
+  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+}
+.menu-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list li {
+  border-bottom: 1px solid #eee;
+}
+
+.menu-list li a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #0877d8;
+  transition: 0.2s;
+}
+
+.menu-list ul li.active a {
+  background: #075396;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+
+
+
+.choice-box {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 5px;
+  transition: 0.2s;
+}
+.choice-box.active {
+  border-color: #007bff;
+  background: #007bff;
+  color: white;
+}
+
+.content-box {
+  display: none; /* ẩn mặc định */
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f9f9f9;
+}
+.content-box.active {
+  display: block; /* chỉ hiện khi active */
+}
+
+
+.text-sdt-bao-hanh{
+ 
+
+}
+
+.input-sdt-bao-hanh{
+  display: flex;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.traCuu{
+  background: #0877d8;
+  color: #fff;
+}
+
+
+
+
+
+
+.showroom-hotline-text-footer {
+  color: #28a745;
+}
+
