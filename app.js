@@ -16,6 +16,8 @@ const container = document.querySelector(".container");
 document.addEventListener("DOMContentLoaded", () => {
   fetch("/page/components/menu-list-showroom.html")
     .then(res => res.text())
+
+    
     .then(data => {
       document.getElementById("menu-list-showroom").innerHTML = data;
 
